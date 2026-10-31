@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Benjamin Noble — city planning." />
+    <meta name="description" content="Ben Noble is a Bay Area city planning consultant helping California communities with zoning codes, general plans, area plans, and public outreach." />
     <title>Benjamin Noble — City Planning</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=mobile-audit-1" />
+    <link rel="stylesheet" href="styles.css?v=content-2026-1" />
   </head>
   <body class="home-page">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -25,6 +25,7 @@
         <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
           <a href="#about">About</a>
           <a href="#projects">Services</a>
+          <a href="#selected-projects">Projects</a>
           <a class="nav-contact" href="#contact">Contact <span aria-hidden="true">↗</span></a>
         </nav>
       </div>
@@ -41,13 +42,23 @@
         </div>
       </section>
 
-      <section class="intro section-rule" id="about">
+      <section class="intro section-rule" id="about" aria-labelledby="about-title">
         <div class="shell">
-          <div class="intro-content">
-            <h2>About<br /><em>placeholder.</em></h2>
-            <div class="intro-meta">
-              <p class="placeholder-copy">About</p>
+          <h2 class="content-title" id="about-title">About Ben</h2>
+          <div class="about-grid">
+            <div class="about-copy">
+              <p class="about-lead">Ben Noble helps California cities and counties turn planning goals into clear, workable policies and regulations.</p>
+              <p>Based in the San Francisco Bay Area, he brings more than 25 years of experience to zoning codes, general plans, neighborhood plans, and public outreach. His work spans urban centers, small towns, and rural communities.</p>
+              <p>Ben works closely with staff and residents to understand local priorities, explain the choices, and write plans people can use. He pays particular attention to how the rules will work in practice, balancing community benefits with the costs of implementation.</p>
             </div>
+            <aside class="about-background" aria-labelledby="background-title">
+              <h3 id="background-title">Background</h3>
+              <p>Ben has run an independent practice since 2014. He previously served as an Associate Principal at PlaceWorks, formerly Design, Community &amp; Environment, where he oversaw the firm’s zoning practice.</p>
+              <dl class="credentials">
+                <div><dt>Master’s in City &amp; Regional Planning</dt><dd>University of North Carolina at Chapel Hill</dd></div>
+                <div><dt>B.A. in History &amp; Southeast Asian Studies</dt><dd>University of Wisconsin–Madison</dd></div>
+              </dl>
+            </aside>
           </div>
         </div>
       </section>
@@ -56,6 +67,7 @@
         <div class="shell work-shell">
           <div class="work-heading">
             <h2 id="work-title">Services</h2>
+            <p class="section-description">From a full zoning code rewrite to a focused policy amendment, Ben helps local agencies plan for change and put their plans into practice.</p>
           </div>
           <div class="work-grid">
             <a class="work-card" href="policy.html">
@@ -90,11 +102,50 @@
         </div>
       </section>
 
-      <section class="contact section-rule" id="contact">
-        <div class="shell contact-inner">
-          <p class="section-index">Contact</p>
-          <h2>Contact<br /><em>placeholder.</em></h2>
-          <a class="contact-link" href="#contact">Add contact link <span aria-hidden="true">↗</span></a>
+      <section class="selected-projects section-rule" id="selected-projects" aria-labelledby="selected-projects-title">
+        <div class="shell">
+          <h2 class="content-title" id="selected-projects-title">Selected projects</h2>
+          <p class="section-description">A closer look at how Ben’s work responds to different communities and planning challenges.</p>
+          <div class="featured-grid">
+            <article class="featured-project">
+              <p class="project-type">Development codes</p>
+              <h3>Eureka Zoning Code</h3>
+              <p>A complete code update introduced mixed-use districts, objective design standards, and more flexible rules for existing buildings and infill.</p>
+              <a class="project-read-more" href="policy.html#eureka-zoning">Read about the project <span aria-hidden="true">↗</span><span class="visually-hidden">: Eureka Zoning Code</span></a>
+            </article>
+            <article class="featured-project">
+              <p class="project-type">Neighborhood planning</p>
+              <h3>Benicia Eastern Gateway</h3>
+              <p>A new mixed-use district pairs by-right housing with clear design standards. Community outreach helped explore housing choices and how new development could fit.</p>
+              <a class="project-read-more" href="design.html#benicia-gateway">Read about the project <span aria-hidden="true">↗</span><span class="visually-hidden">: Benicia Eastern Gateway</span></a>
+            </article>
+            <article class="featured-project">
+              <p class="project-type">Coastal planning</p>
+              <h3>Arcata Local Coastal Program</h3>
+              <p>Work on Arcata’s coastal plan focuses on clear policies and regulations that protect coastal resources and meet Coastal Act requirements.</p>
+              <a class="project-read-more" href="planning.html#arcata-coastal">Read about the project <span aria-hidden="true">↗</span><span class="visually-hidden">: Arcata Local Coastal Program</span></a>
+            </article>
+            <article class="featured-project">
+              <p class="project-type">Public engagement</p>
+              <h3>Moraga Hillsides &amp; Ridgelines</h3>
+              <p>Workshops, a steering committee, and public meetings helped shape clearer rules for hillside development, ridgeline protection, and visual impacts.</p>
+              <a class="project-read-more" href="engagement.html#moraga-hillsides">Read about the project <span aria-hidden="true">↗</span><span class="visually-hidden">: Moraga Hillsides &amp; Ridgelines</span></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section-rule" id="contact" aria-labelledby="contact-title">
+        <div class="shell contact-layout">
+          <div>
+            <h2 class="content-title" id="contact-title">Let’s talk about your project.</h2>
+            <p class="contact-description">Tell Ben what your community is working on and where you need help.</p>
+          </div>
+          <div class="contact-details">
+            <a href="mailto:bnoble@bnplanning.com">bnoble@bnplanning.com</a>
+            <a href="tel:+15105298820">510-529-8820</a>
+            <p>Based in the San Francisco Bay Area.<br />Serving communities throughout California.</p>
+          </div>
         </div>
       </section>
     </main>
