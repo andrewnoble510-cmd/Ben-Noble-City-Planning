@@ -90,3 +90,73 @@ if (!reducedMotion.matches && 'IntersectionObserver' in window && 'animate' in E
   else if (reducedMotion.addListener) reducedMotion.addListener(onMotionChange);
   window.addEventListener('pagehide', stopReveals);
 }
+
+
+// Fixed hero copy over a three-photo slideshow.
+const heroCarousel = document.querySelector('.hero-slideshow');
+if (heroCarousel) {
+  const slides = [...heroCarousel.querySelectorAll('.hero-slide')];
+  const controls = heroCarousel.querySelector('.hero-carousel-controls');
+  const dots = [...heroCarousel.querySelectorAll('.hero-dots button')];
+  const playback = heroCarousel.querySelector('.hero-playback');
+  const status = heroCarousel.querySelector('.hero-slide-status');
+  let current = 0;
+  let timer;
+  let userPaused = reducedMotion.matches;
+  let hovered = false;
+  let focused = false;
+  let inView = true;
+  const schedule = () => {
+    clearTimeout(timer);
+    playback.textContent = userPaused ? 'Play slideshow' : 'Pause slideshow';
+    if (!userPaused && !hovered && !focused && inView && !document.hidden) {
+      timer = setTimeout(() => show(current + 1), 6000);
+    }
+  };
+  const show = (index, manual = false) => {
+    current = (index + slides.length) % slides.length;
+    slides.forEach((slide, i) => slide.classList.toggle('is-active', i === current));
+    dots.forEach((dot, i) => dot.setAttribute('aria-current', String(i === current)));
+    if (manual) status.textContent = dots[current].getAttribute('aria-label');
+    schedule();
+  };
+  heroCarousel.querySelector('.hero-previous').addEventListener('click', () => show(current - 1, true));
+  heroCarousel.querySelector('.hero-next').addEventListener('click', () => show(current + 1, true));
+  dots.forEach((dot, i) => dot.addEventListener('click', () => show(i, true)));
+  playback.addEventListener('click', () => { userPaused = !userPaused; schedule(); });
+  heroCarousel.addEventListener('pointerenter', (event) => { if (event.pointerType === 'mouse') { hovered = true; schedule(); } });
+  heroCarousel.addEventListener('pointerleave', () => { hovered = false; schedule(); });
+  heroCarousel.addEventListener('focusin', () => { focused = true; schedule(); });
+  heroCarousel.addEventListener('focusout', (event) => {
+    focused = heroCarousel.contains(event.relatedTarget);
+    schedule();
+  });
+  heroCarousel.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      show(current + (event.key === 'ArrowLeft' ? -1 : 1), true);
+    }
+  });
+  let touchStart;
+  heroCarousel.addEventListener('touchstart', (event) => {
+    touchStart = { x: event.changedTouches[0].clientX, y: event.changedTouches[0].clientY };
+  }, { passive: true });
+  heroCarousel.addEventListener('touchend', (event) => {
+    if (!touchStart) return;
+    const dx = event.changedTouches[0].clientX - touchStart.x;
+    const dy = event.changedTouches[0].clientY - touchStart.y;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) show(current + (dx < 0 ? 1 : -1), true);
+    touchStart = undefined;
+  }, { passive: true });
+  document.addEventListener('visibilitychange', schedule);
+  const onCarouselMotionChange = () => { userPaused = reducedMotion.matches; schedule(); };
+  if (reducedMotion.addEventListener) reducedMotion.addEventListener('change', onCarouselMotionChange);
+  else if (reducedMotion.addListener) reducedMotion.addListener(onCarouselMotionChange);
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => { inView = entry.isIntersecting; schedule(); }).observe(heroCarousel);
+  }
+  window.addEventListener('pagehide', () => clearTimeout(timer));
+  window.addEventListener('pageshow', schedule);
+  controls.hidden = false;
+  schedule();
+}
