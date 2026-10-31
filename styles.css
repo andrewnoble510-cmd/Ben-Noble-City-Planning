@@ -380,3 +380,14 @@ h1, h2 { overflow-wrap: break-word; }
   font-variant-emoji: text;
   font-style: normal;
 }
+
+/* Align contact heading and links as a compact, balanced block. */
+.contact-layout { grid-template-columns: 1fr 1fr; align-items: center; gap: 8%; }
+.contact-layout h2 { max-width: 12ch; }
+.contact-details { grid-column: 2; grid-row: 1; padding: 0; }
+.contact-details a { font-size: clamp(20px, 2vw, 26px); }
+@media (max-width: 760px) {
+  .contact-layout { grid-template-columns: 1fr; gap: 22px; }
+  .contact-details { grid-column: 1; grid-row: auto; gap: 6px; }
+  .contact-details a { font-size: clamp(20px, 5.5vw, 24px); }
+}
