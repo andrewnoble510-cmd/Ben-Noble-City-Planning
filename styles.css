@@ -216,3 +216,23 @@ h1 em, h2 em { font-family: var(--sans); font-style: normal; font-weight: 500; l
 .service-overview img { display: block; width: 100%; height: auto; border-radius: 24px; }
 .detail-hero h1 { font-size: clamp(42px, 6vw, 84px); line-height: 1.04; overflow-wrap: break-word; }
 @media (max-width: 760px) { .service-overview { grid-template-columns: 1fr; gap: 35px; margin-top: 40px; } }
+
+/* Four services above three centered services on desktop. */
+.work-shell { max-width: 1120px; }
+.work-grid { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 44px 28px; }
+.work-card { grid-column: span 2; }
+.work-card:nth-child(5) { grid-column: 2 / span 2; }
+.work-card h3 { font-size: 12px; letter-spacing: .06em; gap: 8px; }
+.work-visual { border-radius: 24px; }
+@media (max-width: 900px) and (min-width: 761px) {
+  .work-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 24px; }
+  .work-card, .work-card:nth-child(5) { grid-column: auto; }
+  .work-card:last-child { grid-column: 2; }
+}
+@media (max-width: 760px) {
+  .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 24px; }
+  .work-card, .work-card:nth-child(5), .work-card:last-child { grid-column: auto; }
+}
+@media (max-width: 420px) {
+  .work-grid { grid-template-columns: 1fr; }
+}
