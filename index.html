@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=27e1740" />
+    <link rel="stylesheet" href="styles.css?v=work-grid-1" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -25,7 +25,7 @@
         <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
           <a href="#about">About</a>
           <a href="#services">Services</a>
-          <a href="#projects">Projects</a>
+          <a href="#projects">Our work</a>
           <a class="nav-contact" href="#contact">Contact <span aria-hidden="true">↗</span></a>
         </nav>
       </div>
@@ -109,24 +109,28 @@
         </div>
       </section>
 
-      <section class="projects section-rule" id="projects">
-        <div class="shell">
-          <div class="projects-heading">
-            <p class="section-index">Projects</p>
-            <a class="text-link" href="#contact">View all <span aria-hidden="true">↗</span></a>
+      <section class="projects section-rule" id="projects" aria-labelledby="work-title">
+        <div class="shell work-shell">
+          <div class="work-heading">
+            <p class="section-index">Areas of practice</p>
+            <h2 id="work-title">Our work</h2>
           </div>
-          <div class="project-grid">
-            <a class="project-card project-card-large" href="#contact">
-              <div class="project-visual visual-terrace"><span>Project<br />placeholder</span></div>
-              <div class="project-caption"><span>Project placeholder</span><span>↗</span></div>
+          <div class="work-grid">
+            <a class="work-card" href="planning.html">
+              <div class="work-visual visual-terrace" aria-hidden="true"><span class="work-number">01</span><span class="work-symbol">↗</span></div>
+              <h3>Planning <span aria-hidden="true">↗</span></h3>
             </a>
-            <a class="project-card project-card-small" href="#contact">
-              <div class="project-visual visual-block"><span>Project<br />placeholder</span></div>
-              <div class="project-caption"><span>Project placeholder</span><span>↗</span></div>
+            <a class="work-card" href="policy.html">
+              <div class="work-visual visual-grid" aria-hidden="true"><span class="work-number">02</span><span class="work-symbol">＋</span></div>
+              <h3>Policy <span aria-hidden="true">↗</span></h3>
             </a>
-            <a class="project-card project-card-small project-card-offset" href="#contact">
-              <div class="project-visual visual-grid"><span>Project<br />placeholder</span></div>
-              <div class="project-caption"><span>Project placeholder</span><span>↗</span></div>
+            <a class="work-card" href="engagement.html">
+              <div class="work-visual visual-community" aria-hidden="true"><span class="work-number">03</span><span class="work-symbol">◎</span></div>
+              <h3>Engagement <span aria-hidden="true">↗</span></h3>
+            </a>
+            <a class="work-card" href="design.html">
+              <div class="work-visual visual-block" aria-hidden="true"><span class="work-number">04</span><span class="work-symbol">⌑</span></div>
+              <h3>Design <span aria-hidden="true">↗</span></h3>
             </a>
           </div>
         </div>

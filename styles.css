@@ -172,3 +172,37 @@ h1 em, h2 em { font-family: var(--sans); font-style: normal; font-weight: 500; l
   .detail-panel h2 { margin-top: 35px; }
   .detail-return { margin-top: 48px; }
 }
+
+/* Category gallery inspired by the Our Work reference. */
+.work-shell { max-width: 940px; }
+.work-heading { text-align: center; margin-bottom: 58px; }
+.work-heading .section-index { margin: 0 0 20px; }
+.work-heading h2 { font-size: clamp(42px, 5vw, 66px); line-height: 1.1; letter-spacing: -.035em; }
+.work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 64px; }
+.work-card { display: block; min-width: 0; text-align: center; }
+.work-visual { position: relative; aspect-ratio: 1 / 1; overflow: hidden; border-radius: 30px; isolation: isolate; }
+.work-visual::before { z-index: -1; }
+.work-number { position: absolute; top: 24px; left: 26px; font-size: 13px; letter-spacing: .1em; opacity: .8; }
+.work-symbol { position: absolute; inset: 0; display: grid; place-items: center; font-size: clamp(100px, 15vw, 190px); font-weight: 400; line-height: 1; color: #f1f5f8; }
+.work-card h3 { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 22px 0 0; color: var(--ink); font-size: 15px; font-weight: 500; line-height: 1.5; letter-spacing: .12em; text-transform: uppercase; }
+.work-card h3 span { color: var(--coral); }
+.visual-community { background: #315d65; }
+.visual-community::before { position: absolute; content: ""; inset: -25%; background: repeating-radial-gradient(circle at center, transparent 0 37px, rgba(241,245,248,.24) 38px 40px, transparent 41px 75px); }
+.work-card:is(:hover, :focus-visible) h3 { color: var(--coral); }
+@media (prefers-reduced-motion: no-preference) {
+  .work-visual, .work-card h3 { transition: transform .3s var(--motion-ease), color .2s ease; }
+  .work-card:is(:hover, :focus-visible) .work-visual { transform: translateY(-4px); }
+}
+@media (max-width: 760px) {
+  .work-grid { gap: 38px 24px; }
+  .work-heading { margin-bottom: 38px; }
+  .work-visual { border-radius: 22px; }
+  .work-number { top: 16px; left: 18px; font-size: 10px; }
+  .work-symbol { font-size: clamp(70px, 18vw, 130px); }
+  .work-card h3 { font-size: 12px; letter-spacing: .06em; gap: 8px; }
+}
+@media (max-width: 420px) {
+  .work-grid { grid-template-columns: 1fr; gap: 36px; }
+  .work-visual { aspect-ratio: 6 / 5; }
+  .work-symbol { font-size: 130px; }
+}
