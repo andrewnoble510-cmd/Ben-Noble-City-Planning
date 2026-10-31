@@ -4,25 +4,35 @@ const year = document.querySelector('#year');
 
 if (year) year.textContent = new Date().getFullYear();
 
-menuToggle?.addEventListener('click', () => {
-  const isOpen = siteNav.classList.toggle('is-open');
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
-});
+document.documentElement.classList.add('js');
 
-siteNav?.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
+if (menuToggle && siteNav) {
+  const closeMenu = (restoreFocus = false) => {
     siteNav.classList.remove('is-open');
-    menuToggle?.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    if (restoreFocus) menuToggle.focus();
+  };
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = siteNav.classList.toggle('is-open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
   });
-});
-
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && siteNav?.classList.contains('is-open')) {
-    siteNav.classList.remove('is-open');
-    menuToggle?.setAttribute('aria-expanded', 'false');
-    menuToggle?.focus();
-  }
-});
+  siteNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => closeMenu());
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && siteNav.classList.contains('is-open')) closeMenu(true);
+  });
+  document.addEventListener('click', (event) => {
+    if (!siteNav.contains(event.target) && !menuToggle.contains(event.target)) closeMenu();
+  });
+  document.addEventListener('focusin', (event) => {
+    if (!siteNav.contains(event.target) && !menuToggle.contains(event.target)) closeMenu();
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 760) closeMenu();
+  });
+}
 
 // Content stays visible by default, including when JavaScript or motion APIs are unavailable.
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -73,8 +83,10 @@ if (!reducedMotion.matches && 'IntersectionObserver' in window && 'animate' in E
     activeReveals.forEach((animation) => animation.cancel());
     activeReveals.clear();
   };
-  reducedMotion.addEventListener('change', (event) => {
+  const onMotionChange = (event) => {
     if (event.matches) stopReveals();
-  });
+  };
+  if (reducedMotion.addEventListener) reducedMotion.addEventListener('change', onMotionChange);
+  else if (reducedMotion.addListener) reducedMotion.addListener(onMotionChange);
   window.addEventListener('pagehide', stopReveals);
 }

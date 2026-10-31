@@ -271,3 +271,19 @@ h1 em, h2 em { font-family: var(--sans); font-style: normal; font-weight: 500; l
   .hero-photo h1 { font-size: clamp(56px, 14vw, 88px); }
   .hero-photo-credit { right: 20px; left: 20px; bottom: 16px; text-align: center; font-size: 9px; }
 }
+
+/* Responsive safeguards and comfortably sized navigation controls. */
+img { max-width: 100%; }
+.detail-hero > *, .service-overview > *, .contact-inner > * { min-width: 0; }
+h1, h2 { overflow-wrap: break-word; }
+.site-nav a, .detail-return, .contact-link { min-height: 44px; display: inline-flex; align-items: center; }
+@media (max-width: 760px) {
+  .header-inner { padding: 18px 0; }
+  .menu-toggle { min-height: 44px; min-width: 88px; justify-content: flex-end; padding: 10px 0 10px 10px; }
+  .wordmark { min-height: 44px; }
+  .intro h2, .contact h2 { font-size: clamp(42px, 10vw, 72px); line-height: 1.02; }
+  .work-visual { aspect-ratio: 1; }
+  html:not(.js) .header-inner { flex-wrap: wrap; gap: 20px; }
+  html:not(.js) .menu-toggle { display: none; }
+  html:not(.js) .site-nav { position: static; width: 100%; visibility: visible; opacity: 1; pointer-events: auto; transform: none; }
+}
