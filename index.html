@@ -8,9 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=organized-services-1" />
+    <link rel="stylesheet" href="styles.css?v=night-city-hero-1" />
   </head>
-  <body>
+  <body class="home-page">
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="shell header-inner">
@@ -31,42 +31,15 @@
     </header>
 
     <main id="main">
-      <section class="hero" id="top">
-        <div class="shell hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">City planning <span>/</span> Bay Area</p>
-            <h1>Ben Noble<br /><em>City planning.</em></h1>
-            <div class="hero-bottom">
-              <a class="circle-link" href="#about" aria-label="Explore the site"><span>↓</span></a>
-            </div>
-          </div>
-          <div class="hero-art" aria-label="Abstract city planning grid placeholder" role="img">
-            <div class="art-label art-label-bottom">Field / Form / Future</div>
-            <svg viewBox="0 0 620 680" aria-hidden="true" focusable="false">
-              <defs>
-                <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#d5dbcb" />
-                  <stop offset="1" stop-color="#b8c7bd" />
-                </linearGradient>
-                <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
-                  <path d="M 34 0 L 0 0 0 34" fill="none" stroke="#f7f3ec" stroke-width="1" opacity=".72" />
-                </pattern>
-              </defs>
-              <rect width="620" height="680" fill="url(#paper)" />
-              <rect width="620" height="680" fill="url(#grid)" />
-              <path d="M-30 120 C140 210 220 70 350 145 S520 285 660 214" fill="none" stroke="#f7f3ec" stroke-width="18" opacity=".9" />
-              <path d="M-15 127 C140 212 225 79 352 152 S520 290 650 220" fill="none" stroke="#6f89a3" stroke-width="2" />
-              <path d="M90 -10 C150 138 70 235 184 340 S220 530 172 700" fill="none" stroke="#f7f3ec" stroke-width="30" opacity=".75" />
-              <path d="M90 -10 C150 138 70 235 184 340 S220 530 172 700" fill="none" stroke="#6f89a3" stroke-width="2" />
-              <path d="M395 -20 L344 170 398 298 313 420 386 720" fill="none" stroke="#f7f3ec" stroke-width="12" opacity=".85" />
-              <path d="M395 -20 L344 170 398 298 313 420 386 720" fill="none" stroke="#6f89a3" stroke-width="2" />
-              <path d="M38 525 L270 430 560 505 640 420" fill="none" stroke="#18324d" stroke-width="1.5" opacity=".7" />
-              <circle cx="395" cy="298" r="21" fill="#e37d54" />
-              <circle cx="395" cy="298" r="4" fill="#f7f3ec" />
-              <circle cx="184" cy="340" r="8" fill="#18324d" />
-            </svg>
-          </div>
+      <section class="hero hero-photo" id="top" aria-labelledby="hero-title">
+        <img class="hero-background" src="images/san-francisco-night.jpg" alt="" width="2200" height="1566" fetchpriority="high" />
+        <div class="shell hero-photo-content">
+          <p class="hero-location">Bay Area / California</p>
+          <h1 id="hero-title">Ben Noble</h1>
+          <p class="hero-discipline">City planning.</p>
+          <a class="hero-services-link" href="#projects">Explore services <span aria-hidden="true">↗</span></a>
         </div>
+        <a class="hero-photo-credit" href="https://www.pexels.com/photo/aerial-view-of-buildings-and-towers-208604/" target="_blank" rel="noopener noreferrer">San Francisco · Photo: Pixabay / Pexels</a>
       </section>
 
       <section class="intro section-rule" id="about">
@@ -76,24 +49,6 @@
             <div class="intro-meta">
               <p class="placeholder-copy">About</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="services section-rule" id="services">
-        <div class="shell">
-          <div class="services-heading">
-            <p class="eyebrow">Services</p>
-            <h2>Scope of work.</h2>
-          </div>
-          <div class="service-list" role="list">
-            <a class="service-item" href="policy.html" role="listitem"><span class="service-name">Zoning codes & development regulations</span><span class="service-arrow">↗</span></a>
-            <a class="service-item" href="planning.html" role="listitem"><span class="service-name">Comprehensive planning</span><span class="service-arrow">↗</span></a>
-            <a class="service-item" href="design.html" role="listitem"><span class="service-name">Specific & area plans</span><span class="service-arrow">↗</span></a>
-            <a class="service-item" href="regional-planning.html" role="listitem"><span class="service-name">Regional planning & coordination</span><span class="service-arrow">↗</span></a>
-            <a class="service-item" href="engagement.html" role="listitem"><span class="service-name">Public participation & outreach</span><span class="service-arrow">↗</span></a>
-            <a class="service-item" href="planning-studies.html" role="listitem"><span class="service-name">Special planning studies</span><span class="service-arrow">↗</span></a>
-            <a class="service-item" href="current-planning.html" role="listitem"><span class="service-name">Current planning services</span><span class="service-arrow">↗</span></a>
           </div>
         </div>
       </section>
