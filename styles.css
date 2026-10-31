@@ -368,3 +368,15 @@ h1, h2 { overflow-wrap: break-word; }
   .contact-layout { grid-template-columns: 1fr; gap: 28px; }
   .contact-details { grid-column: 1; grid-row: auto; }
 }
+
+/* Keep directional marks as orange text symbols on mobile font fallback. */
+.site-nav a span[aria-hidden="true"],
+.hero-services-link span[aria-hidden="true"],
+.work-card h3 span[aria-hidden="true"],
+.project-read-more span[aria-hidden="true"],
+.service-next-step a span[aria-hidden="true"] {
+  color: var(--coral);
+  font-family: "DM Sans", Arial, sans-serif;
+  font-variant-emoji: text;
+  font-style: normal;
+}
