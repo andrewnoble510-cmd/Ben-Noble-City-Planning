@@ -359,3 +359,12 @@ h1, h2 { overflow-wrap: break-word; }
   .experience-entry { gap: 22px; margin-top: 28px; padding-top: 24px; }
   .service-next-step { margin-top: 48px; padding: 24px; }
 }
+
+/* Contact: put the contact information first in a clean, two-column block. */
+.contact-layout { grid-template-columns: 1fr 1fr; align-items: start; }
+.contact-layout h2 { grid-column: auto; max-width: 12ch; }
+.contact-details { grid-column: 2; grid-row: 1; padding-top: 4px; }
+@media (max-width: 760px) {
+  .contact-layout { grid-template-columns: 1fr; gap: 28px; }
+  .contact-details { grid-column: 1; grid-row: auto; }
+}
