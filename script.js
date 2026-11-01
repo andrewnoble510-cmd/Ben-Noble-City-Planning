@@ -97,7 +97,7 @@ const heroCarousel = document.querySelector('.hero-slideshow');
 if (heroCarousel) {
   const slides = [...heroCarousel.querySelectorAll('.hero-slide')];
   const status = heroCarousel.querySelector('.hero-slide-status');
-  const descriptions = ['San Francisco hills', 'Coastal city and harbor', 'Neighborhoods below Sutro Tower'];
+  const descriptions = ['San Francisco hills', 'Waterfront harbor and hillside homes', 'Neighborhoods below Sutro Tower'];
   let current = 0;
   const show = (index) => {
     current = (index + slides.length) % slides.length;
