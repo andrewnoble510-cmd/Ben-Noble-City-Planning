@@ -428,8 +428,11 @@ h1, h2 { overflow-wrap: break-word; }
 
 /* Frame the supplied slideshow photos without white bands or the Benicia bench. */
 .hero-slide:nth-child(2) { transform: scale(1.18); }
-.hero-slide:nth-child(3) { object-position: center 50%; }
+.hero-slide:nth-child(3) { object-position: center 35%; }
+@media (max-width: 1100px) {
+  .hero-slide:nth-child(3) { transform: scale(1.6); transform-origin: center 40%; }
+}
 @media (max-width: 760px) {
   .hero-slide:nth-child(2) { transform: scale(1.27); }
-  .hero-slide:nth-child(3) { transform: scale(1.65); }
+  .hero-slide:nth-child(3) { transform: scale(1.6); }
 }
