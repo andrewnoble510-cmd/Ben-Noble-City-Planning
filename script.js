@@ -97,7 +97,7 @@ const heroCarousel = document.querySelector('.hero-slideshow');
 if (heroCarousel) {
   const slides = [...heroCarousel.querySelectorAll('.hero-slide')];
   const status = heroCarousel.querySelector('.hero-slide-status');
-  const descriptions = ['Green hills and hillside homes', 'Waterfront harbor and hillside homes', 'Marina homes and hills framed by a tree'];
+  const descriptions = ['Capitola waterfront and bridge', 'Capitola Mall and surrounding city', 'Benicia cityscape and hills'];
   let current = 0;
   const show = (index) => {
     current = (index + slides.length) % slides.length;

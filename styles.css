@@ -425,3 +425,11 @@ h1, h2 { overflow-wrap: break-word; }
 @media (prefers-reduced-motion: reduce) {
   .hero-slide { transition: none; }
 }
+
+/* Frame the supplied slideshow photos without white bands or the Benicia bench. */
+.hero-slide:nth-child(2) { transform: scale(1.18); }
+.hero-slide:nth-child(3) { object-position: center 50%; }
+@media (max-width: 760px) {
+  .hero-slide:nth-child(2) { transform: scale(1.27); }
+  .hero-slide:nth-child(3) { transform: scale(1.65); }
+}
