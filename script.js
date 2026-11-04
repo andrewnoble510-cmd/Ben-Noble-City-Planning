@@ -97,7 +97,7 @@ const heroCarousel = document.querySelector('.hero-slideshow');
 if (heroCarousel) {
   const slides = [...heroCarousel.querySelectorAll('.hero-slide')];
   const status = heroCarousel.querySelector('.hero-slide-status');
-  const descriptions = ['Capitola waterfront and bridge', 'Capitola Mall and surrounding city', 'Benicia cityscape and hills'];
+  const descriptions = ['Capitola waterfront and bridge', 'Arcata plaza and farmers market', 'Benicia cityscape and hills'];
   let current = 0;
   const show = (index) => {
     current = (index + slides.length) % slides.length;
